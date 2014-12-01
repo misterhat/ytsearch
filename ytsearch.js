@@ -45,7 +45,7 @@ var argv = minimist(process.argv.slice(2)),
     limit = +(argv.l || argv.limit) || 1,
     offset = +(argv.o || argv.offset) || 1,
     music = !!(argv.m || argv.music),
-    format = (argv.f || argv.format) || '%u\n',
+    format = (argv.f || argv.format) || '%u',
     pretty = (argv.p || argv.pretty),
 
     nostrip = !!argv.nostrip,
@@ -83,7 +83,7 @@ function showHelp() {
         colors.underline('"' + Object.keys(FORMATS).join(' ') + '"'),
         '\tFormat a video\'s meta data with a specific format string.\n',
         formats,
-        '\tdefault: ' + colors.underline('"%u\\n"'),
+        '\tdefault: ' + colors.underline('"%u"'),
 
         colors.bold('-l, --limit') + ' '  + colors.underline('<number>'),
         '\tLimit the amount of videos returned by the specified number.',

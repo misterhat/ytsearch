@@ -45,7 +45,7 @@ Usage: ytsearch <terms> [options]
         %u - url
         %p - published
 
-        default: "%u\n"
+        default: "%u"
 -l, --limit <number>
         Limit the amount of videos returned by the specified number.
         default: 1
