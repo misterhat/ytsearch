@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Search YouTube from the command-line without an API key.",
   "main": "ytsearch.js",
+  "bin": {
+    "ytsearch": "./ytsearch.js"
+  },
   "keywords": [
     "youtube",
     "search",
