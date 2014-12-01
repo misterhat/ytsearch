@@ -12,9 +12,7 @@ var util = require('util'),
 
     package = require('./package');
 
-var MINIHOST = 'https://youtu.be/%s',
-
-    FORMATS = {
+var FORMATS = {
         '%t': 'title',
         '%a': 'author',
         '%d': 'description',
@@ -27,14 +25,17 @@ var MINIHOST = 'https://youtu.be/%s',
         '%p': 'published'
     },
 
+    FPCENT = String.fromCharCode(65285),
+    MINIHOST = 'https://youtu.be/%s',
+
     PRETTY =
-        colors.bold('%t') + ' (uploader: %a, views: ' + colors.green('%v') + ')\n' +
+        colors.bold('%t') + ' (uploader: %a, views: ' + colors.green('%v')
+        + ')\n' +
         colors.bold('duration: ') + '%D\n' +
         colors.bold('thumbnail: ') + '%T\n' +
         colors.bold('description: ') + '%d\n' +
-        colors.bold('watch: ') + '%u\n\n',
+        colors.bold('watch: ') + '%u\n\n';
 
-    FPCENT = String.fromCharCode(65285);
 
 var argv = minimist(process.argv.slice(2)),
 
@@ -70,7 +71,8 @@ function showHelp() {
     }, '');
 
     console.log([
-        'Usage: ytsearch <terms> [options]\n',
+        'Usage: ytsearch ' + colors.underline('<terms>')
+        + ' ' + colors.bold('[options]') + '\n',
 
         colors.bold('-h, --help'),
         '\tDisplay this screen.',
@@ -124,7 +126,7 @@ function formatVideo(video) {
     }
 
     video.views = +video.statistics.viewCount || 0;
-    video.favorites = +video.statistics.favouriteCount;
+    video.favorites = +video.statistics.favouriteCount || 0;
 
 
     if (!inhuman) {

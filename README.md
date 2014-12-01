@@ -8,6 +8,10 @@ pairs well with ytdl.
     # npm install -g ytsearch
 
 ## Examples
+Output the first five results for a search term with a pretty interface:
+
+    $ ytsearch "the beatles" -p -l 5
+
 Display the first five searches for terms with title, descriptions and URLs:
 
     $ ytsearch "dr katz" -f "%t\n%d\n%u\n\n" --limit 5
@@ -19,8 +23,8 @@ Stream a TV show to mplayer:
 Find the link for a music track, stream the download to ffmpeg which strips the
 video, saves it to disk and finally streams the audio to mplayer:
 
-    $ ytdl "$(ytsearch altogether\ now --music)" | ffmpeg -i pipe:0 -vn -f mp3 \
-    altogether.mp3 -f mp3 pipe:1 | mplayer -
+    $ ytdl "$(ytsearch altogether\ now\ beatles --music)" | ffmpeg -i pipe:0  \
+    -vn -f mp3 altogether.mp3 -f mp3 pipe:1 | mplayer -
 
 ## Manual
 ```
