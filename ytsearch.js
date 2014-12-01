@@ -115,7 +115,12 @@ function formatVideo(video) {
 
     // Replace "%" with full-width percents.
     video.title = video.title.replace('%', FPCENT);
-    video.description = video.description.replace('%', FPCENT);
+
+    if (video.description) {
+        video.description = video.description.replace('%', FPCENT);
+    } else {
+        video.description = '';
+    }
 
     video.url = util.format(MINIHOST, youtubeId(video.url));
 
