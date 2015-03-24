@@ -39,7 +39,7 @@ var FORMATS = {
 
 var argv = minimist(process.argv.slice(2)),
 
-    terms = argv._[0] || '',
+    terms = argv._.join(' '),
 
     help = !!(argv.h || argv.help),
 

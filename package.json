@@ -1,6 +1,6 @@
 {
   "name": "ytsearch",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Search YouTube from the command-line without an API key.",
   "main": "ytsearch.js",
   "bin": {
